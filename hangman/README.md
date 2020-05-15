@@ -1,4 +1,4 @@
-# Battleships
+# Hangman
 
 Implementación en python 3 del juego ahorcado (Hangman).
 
