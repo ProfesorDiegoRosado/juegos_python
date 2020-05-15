@@ -21,6 +21,7 @@ Cada carpeta de juego incluirá su README.md independiente donde se tratarán la
 
 El listado de juegos disponible es:
  * Battleships (hundir la flota)
+ * Hangman (ahorcado)
 
 
 
