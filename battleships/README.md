@@ -13,7 +13,8 @@ Cuando no queden barcos sin hundir se acaba el juego.
 Solo existe un archivo python que tiene todo el código y que está disponible en la carpeta src.
 Para ejecutarlo desde la carpeta de battleships habría que poner lo siguiente:
 
+```bash
    $ python3 src/main.py
-
+```
 
 ![Captura del juego](resources/images/screencast1.png)
