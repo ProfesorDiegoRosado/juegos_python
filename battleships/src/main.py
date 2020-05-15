@@ -4,6 +4,7 @@
 
 # https://misc.flogisoft.com/bash/tip_colors_and_formatting
 BLINK = "\033[33;5m"
+YELLOW = "\033[33"
 BLUE = "\033[34m"
 LIGHT_GRAY = "\033[37m"
 NORMAL = "\033[0m"
@@ -21,21 +22,9 @@ HIT: chr = '#'
 class Board:
 
     def __init__(self):
-        """
+        # Tablero con la información completa de los barcos y el agua
         self.hidden_board = [
-            #1           2           3           4           5        6           7        8
-            [WATER,      WATER,      WATER,      WATER,      WATER,      WATER,      WATER,      WATER],  # a
-            [WATER,      BATTLESHIP, BATTLESHIP, BATTLESHIP, WATER,      WATER,      WATER,      WATER],  # b
-            [WATER,      WATER,      WATER,      WATER,      WATER,      WATER,      WATER,      WATER],  # c
-            [BATTLESHIP, WATER,      WATER,      WATER,      WATER,      WATER,      WATER,      WATER],  # d
-            [BATTLESHIP, WATER,      WATER,      WATER, BATTLESHIP, BATTLESHIP,      WATER,      WATER],  # e
-            [WATER,      WATER,      WATER,      WATER,      WATER,      WATER,      WATER,      WATER],  # f
-            [WATER,      WATER,      BATTLESHIP, WATER,      WATER,      WATER,      WATER,      WATER],  # g
-            [WATER,      WATER,      WATER,      WATER,      WATER, BATTLESHIP, BATTLESHIP, BATTLESHIP]   # h
-        ]
-        """
-        self.hidden_board = [
-            #1           2           3           4           5        6           7        8
+            #1           2           3           4           5           6           7           8
             [WATER,      WATER,      WATER,      WATER,      WATER,      WATER,      WATER,      WATER],  # a
             [WATER,      WATER,      WATER,      WATER,      WATER,      WATER,      WATER,      WATER],  # b
             [WATER,      WATER,      WATER,      WATER,      WATER,      WATER,      WATER,      WATER],  # c
@@ -45,6 +34,7 @@ class Board:
             [WATER,      WATER,      WATER,      WATER,      WATER,      WATER,      WATER,      WATER],  # g
             [WATER,      WATER,      WATER,      WATER,      WATER,      WATER,      WATER,      WATER]   # h
         ]
+        # Tablero con la información actual del juego. Se inicializa todo a casillas desconocidas (UNKNOWKN)
         self.board = [[UNKNOWN for row in range(len(self.hidden_board))] for column in range(len(self.hidden_board[0]))]
 
     def draw(self):
@@ -55,7 +45,6 @@ class Board:
             for j in range(len(row)):
                 tile = row[j]
                 print(tile + " ", end="")
-                #print(" x: " + str(i) + " , j: " + str(j), end="")
             print()
 
     def draw_cool(self, turn: (int,int)):
@@ -66,8 +55,7 @@ class Board:
             for j in range(len(row)):
                 tile = row[j]
                 if i == turn[0] and j == turn[1]:
-                    #print(BLINK, end="")
-                    print(BG_YELLOW, end="")
+                    print(YELLOW, end="")
                 elif tile == WATER:
                     print(BLUE, end="")
                     print(BG_BLUE, end="")
@@ -77,7 +65,6 @@ class Board:
                 print(NORMAL, end="")
                 #print(" x: " + str(i) + " , j: " + str(j), end="")
             print()
-
 
     def check(self, turn: (int, int)):
         row = turn[0]
@@ -149,6 +136,6 @@ while not end:
         print("WATER!!!!")
     else:
         print("HIT!!!!")
-    board.draw_cool(turn)
+    board.draw()
     end = board.check_end()
 
