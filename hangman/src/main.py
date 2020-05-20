@@ -1,5 +1,5 @@
-
-
+# Author: Profeso Diego Rosado
+# Description: Hangman game implementation
 
 
 def hangman0():
@@ -121,6 +121,12 @@ def word_guessed(word, letters):
             guessed = False
     return guessed
 
+def show_letters(letters):
+    if len(letters)==0:
+        print("{}")
+    else:
+        print(letters)
+
 
 hidden_word = input("Introduzca la palabra a adivinar: ")
 clear_screen()
@@ -132,6 +138,7 @@ letters = set()    # conjunto con las letras que hemos dicho para adivinar la pa
 while not end:
     show_hangman(mistakes)
     show_word(hidden_word, letters)
+    show_letters(letters)
 
     letter = input("Introduzca una letra: ")
     letters.add(letter)     # añadimos la letra que hemos leido al conjunto
