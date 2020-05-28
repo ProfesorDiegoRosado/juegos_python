@@ -9,7 +9,7 @@ Se trata de una versión muy sencilla sin ningún tipo de configuración.
 # Ejecución
 
 Solo existe un archivo python que tiene todo el código y que está disponible en la carpeta src.
-Para ejecutarlo desde la carpeta de battleships habría que poner lo siguiente:
+Para ejecutarlo desde la carpeta del juego, dictionary, habría que poner lo siguiente:
 
 ```bash
    $ python3 src/main.py
@@ -26,5 +26,11 @@ Si aciertas con la definición correcta tendrás un acierto más. Si te equivoca
 # Version dos jugadores
 
 Se ha incluido una version para dos jugadores. Cada jugador introducirá su nombre al principio del juego. Los jugadores irán alternando los turnos mientras dure la partida. Al terminar se mostrará un resumen de las respuestas acertadas y erroneas de cada jugador.
+
+Para ejecutarlo tenéis que poner el siguiente comando.
+
+```bash
+   $ python3 src/dictionary_two_people.py
+```
 
 ![Captura del juego para dos jugadores](resources/images/screencast1_two_players.png)
